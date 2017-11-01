@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+   <channel>
+      <title>Yahoo! Finance: YHOO Industry news</title>
+      <copyright>Copyright (c) 2005 Yahoo! Inc. All rights reserved.</copyright>
+      <link>http://finance.yahoo.com/q/in?s=yhoo</link>
+      <description>Latest Financial Industry news for YAHOO INC</description>
+      <language>en-us</language>
+      <lastBuildDate>Wed, 16 Nov 2005 22:02:10 GMT</lastBuildDate>
+      <image>
+         <url>https://s.yimg.com/zz/combo?a/p/fi/pr/40197.gif</url>
+         <title>Yahoo! Finance</title>
+         <link>http://finance.yahoo.com/q/in?s=yhoo</link>
+         <width>144</width>
+         <height>17</height>
+      </image>
+      <item>
+         <title>Facebook.com Stares Down Success (at Fortune)</title>
+         <link>http://us.rd.yahoo.com/finance/external/ftn/rss/SIG=12cmrm9uo/*http://www.fortune.com/fortune/technology/articles/0,15114,1130217,00.html?promoid=yahoo</link>
+         <description></description>
+         <guid isPermaLink="false">yahoo_finance/4200722342</guid>
+         <pubDate>Wed, 16 Nov 2005 22:02:07 GMT</pubDate>
+      </item>
+      <item>
+         <title>Wall Street set to nudge higher (FT.com)</title>
+         <link>http://us.rd.yahoo.com/finance/news/rss/story/*http://biz.yahoo.com/ft/051116/fto111620050909157175.html?.v=1</link>
+         <description>Futures trading on Wall Street pointed to possible slight opening gains on
+            Wednesday with stocks poised to take a lift later after consumer price figures were
+            revealed to be in line with expectations, easing fears of rising price pressures.</description>
+         <guid isPermaLink="false">yahoo_finance/3559841129</guid>
+         <pubDate>Wed, 16 Nov 2005 13:56:00 GMT</pubDate>
+      </item>
+   </channel>
+</rss>
