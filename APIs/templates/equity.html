@@ -4,9 +4,16 @@
 <title>Equity</title>
 </head>
 <body>
+
 <p><h1>Equity news</h1></p>
 <p>Title: <a href="#" onclick='window.open("{{url}}");return false;'>{{title}}</a></p>
 <p>Summary: {{summary}}</p>
 <p>Date: {{date}}</p>
+{% for entry in entries %}
+  <li><h2><a href={{ entry["URL"] }}>{{ entry["Title"] }}</a></h2></li>
+  <li><h2>{{ entry["Summary"] }}</h2></li>
+{% else %}
+  <li><em>Unbelievable.  No entries here so far</em>
+{% endfor %}
 </body>
-</html?
+</html>
