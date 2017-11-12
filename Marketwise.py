@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import Adapter
+from APIs import Adapter
 app = Flask("MyApp")
 
 @app.route("/")
