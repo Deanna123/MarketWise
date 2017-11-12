@@ -6,13 +6,13 @@ app = Flask("MyApp")
 def home():
     return render_template("index.html")
 
-#@app.route("/about") #maybe we could make an about the site/about us page?
-#def about():
-#    return render_template("about.html")
+@app.route("/about") #maybe we could make an about the site/about us page?
+def about():
+    return render_template("about.html")
 
-#@app.route("/newsletter") #page for making a signup page for relevant newsletters with mailgun?
-#def news():
-#    return render_template("newsletter.html")
+@app.route("/newsletter") #page for making a signup page for relevant newsletters with mailgun?
+def news():
+    return render_template("newsletter.html")
 
 @app.route("/northamerica")
 def northamerica():
@@ -38,4 +38,6 @@ def asia():
 def australia():
     return render_template("australia.html", entries = Adapter.final_adapter('assets AND australia'))
 
-app.run(debug = True)
+
+if __name__ == '__main__':
+    app.run(debug = True)

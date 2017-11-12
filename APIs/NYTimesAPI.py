@@ -1,15 +1,17 @@
 from datetime import date, timedelta
-from nytimesarticle import articleAPI
+import requests
 import pprint
 
 def get_article(query):
-    api = articleAPI("522e4e6f593d44baaf69a87cdff70548")
-
+    API_key = "522e4e6f593d44baaf69a87cdff70548"
     today = date.today()
     prev_date = date(2014, 1, 1)
+    API_endpoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+query+"&begin_date="+prev_date.strftime('%Y%m%d')+"&end_date="+today.strftime('%Y%m%d')+"&api-key=522e4e6f593d44baaf69a87cdff70548"
 
-    results = api.search( q = query, begin_date = prev_date.strftime('%Y%m%d'), end_date = today.strftime('%Y%m%d'), sort = 'newest', fl = ['web_url','snippet','headline','pub_date'])
-    articles = results['response']['docs'][0:3]
+
+    results = requests.get(API_endpoint)
+    data = results.json()
+    articles = data['response']['docs'][0:3]
 
     adapter = []
 
@@ -23,4 +25,4 @@ def get_article(query):
              adapDict['Published on'] = article['pub_date']
         adapter.append(adapDict)
     return adapter
-#pprint.pprint(get_article('assets AND australia'))
+#pprint.pprint(get_article("assets AND europe"))

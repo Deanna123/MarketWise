@@ -1,4 +1,4 @@
-import NYTimesAPI, GuardianAPI
+from APIs import GuardianAPI, NYTimesAPI
 
 def final_adapter(query):
     ny_adapter = NYTimesAPI.get_article(query)
