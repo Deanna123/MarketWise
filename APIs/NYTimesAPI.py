@@ -1,29 +1,26 @@
-#from flask import Flask, render_template, request
 from datetime import date, timedelta
 from nytimesarticle import articleAPI
+import pprint
 
-#else:
-#    today == yesterday
-#    yesterday = date.today() - timedelta(2)
-def get_article():
-     adapter = []
-     api = articleAPI("522e4e6f593d44baaf69a87cdff70548")
+def get_article(query):
+    api = articleAPI("522e4e6f593d44baaf69a87cdff70548")
 
-     today = date.today()
-     yesterday = date.today() - timedelta(1)
-     articles = api.search( q = 'equity', begin_date = yesterday.strftime('%Y%m%d'), end_date = today.strftime('%Y%m%d'), sort = 'newest', fl = ['web_url','snippet','headline','pub_date'])
-     x = articles['response']['docs']
-     #import pprint
-     #pprint.pprint(articles)
-     if len(x) > 1:
-         #add loop here for multiple articles
-         arts = x[0]
-         adapDict = {}
-         for key, value in articles.items():
+    today = date.today()
+    prev_date = date(2014, 1, 1)
+
+    results = api.search( q = query, begin_date = prev_date.strftime('%Y%m%d'), end_date = today.strftime('%Y%m%d'), sort = 'newest', fl = ['web_url','snippet','headline','pub_date'])
+    articles = results['response']['docs'][0:3]
+
+    adapter = []
+
+    for article in articles:
+        adapDict = {}
+        for key, value in article.items():
              adapDict['Source'] = 'Times'
-             adapDict['URL'] = arts['web_url']
-             adapDict['Title'] = arts['headline']['main']
-             adapDict['Summary'] = arts['snippet']
-         adapter.append(adapDict)
-     return adapter
-#print get_article()
+             adapDict['URL'] = article['web_url']
+             adapDict['Title'] = article['headline']['main']
+             adapDict['Summary'] = article['snippet']
+             adapDict['Published on'] = article['pub_date']
+        adapter.append(adapDict)
+    return adapter
+#pprint.pprint(get_article('assets AND australia'))
