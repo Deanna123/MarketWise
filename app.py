@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from APIs import Adapter
-app = Flask("MyApp")
-
+import os
+app = Flask("MyApp", static_folder='static')
 @app.route("/")
 def home():
     return render_template("Map.html")
