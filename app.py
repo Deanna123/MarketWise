@@ -4,7 +4,7 @@ import os
 app = Flask("MyApp", static_folder='static')
 @app.route("/")
 def home():
-    return render_template("Map.html")
+    return render_template("index.html")
 
 @app.route("/about") #maybe we could make an about the site/about us page?
 def about():

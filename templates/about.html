@@ -1,9 +1,48 @@
 <!doctype html>
-<html>
 <head>
-<title>About</title>
+  <title>About</title>
+<style>
+  h1{
+    font-family: "arial";}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+      background-color: #111;
+  }
+
+  .active {
+      background-color: #006A7C;
+  }
+  </style>
 </head>
 <body>
-  <h2>Coming soon!</h2>
+  <div class='row text-center heading'>
+    <h1> Marketwise</h1>About Marketwise</p></h>
+  </div>
+  <ul>
+  <li><a style="color:white" href="/">Home</a></li>
+  <li><a class="active" style="color:white" href="about">About</a></li>
+  <li style="float:right" "color:white"><a href="newsletter">Newsletter</a></li>
+  </ul>
+
 </body>
 </html>
