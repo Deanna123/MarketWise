@@ -2,7 +2,7 @@ from datetime import date, timedelta
 import requests
 import pprint
 
-def get_article(query):
+def get_article(query, number):
     API_key = "522e4e6f593d44baaf69a87cdff70548"
     today = date.today()
     prev_date = date(2014, 1, 1)
@@ -11,7 +11,7 @@ def get_article(query):
 
     results = requests.get(API_endpoint)
     data = results.json()
-    articles = data['response']['docs'][0:3]
+    articles = data['response']['docs'][0:number]
 
     adapter = []
 
