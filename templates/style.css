@@ -3,10 +3,11 @@ body {
 }
 
 h1 {
-	font-family: 'Lobster', cursive;
+	font-family: 'Lobster', monospace;
 	font-size: 2em;
 	text-align: center;
 	border: 7px double white;
 	margin-right: 50px;
 	margin-left: 50px;
 }
+
