@@ -3,11 +3,11 @@ import requests
 import pprint
 
 def get_article(region, number):
-    query = region+" AND" + "market OR asset" + "bonds OR commodity OR Currency OR equity OR property"
+    query = region+" AND" + " market OR asset" + " bonds OR commodity OR Currency OR equity OR property"
     API_key = "522e4e6f593d44baaf69a87cdff70548"
     today = date.today()
     prev_date = date(2014, 1, 1)
-    API_endpoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+query+"&begin_date="+prev_date.strftime('%Y%m%d')+"&end_date="+today.strftime('%Y%m%d')+"&api-key=522e4e6f593d44baaf69a87cdff70548"
+    API_endpoint = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+query+'&begin_date='+prev_date.strftime('%Y%m%d')+"&end_date="+today.strftime('%Y%m%d')+'&facet_field=section_name&fq=section_name:"business"&api-key=522e4e6f593d44baaf69a87cdff70548'
 
 
     results = requests.get(API_endpoint)
@@ -25,6 +25,7 @@ def get_article(region, number):
              adapDict['Title'] = article['headline']['main']
              adapDict['Summary'] = article['snippet']
              adapDict['Published on'] = article['pub_date']
+             #adapDict['Thumbnail'] = article['multimedia'][1]
         adapter.append(adapDict)
     return adapter
-#pprint.pprint(get_article("north america" ,3))
+#pprint.pprint(get_article("north america" ,1))
