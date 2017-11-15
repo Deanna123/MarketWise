@@ -2,6 +2,23 @@ from flask import Flask, render_template, request
 from APIs import Adapter
 import os
 app = Flask("MyApp", static_folder='static')
+#def create_mailing_list():
+#    return requests.post(
+#        "https://api.mailgun.net/v3/lists",
+#        auth=('api', '8824cc46530d7251c20db860bac28e0f'),
+#        data={'address': 'LIST@sandboxd8902be4c4fb4758bc2650cc7f6dee9d.mailgun.org',
+#              'description': "Marketwise newsletter list"})
+
+#def add_list_member(address, name, region, asset):
+#    return requests.post(
+#        "https://api.mailgun.net/v3/lists/LIST@sandboxd8902be4c4fb4758bc2650cc7f6dee9d.mailgun.org/members",
+#        auth=('api', 'key-8824cc46530d7251c20db860bac28e0f'),
+#        data={'subscribed': True,
+#              'address': '<address>',
+#              'name': '<name>',
+#              'description': 'Member',
+#              'vars': '{"interests": <region> <asset>}'})
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -16,27 +33,27 @@ def news():
 
 @app.route("/northamerica")
 def northamerica():
-    return render_template("northamerica.html", entries = Adapter.final_adapter('bonds AND "north america"',1) + Adapter.final_adapter('commodity AND "north america"',1) + Adapter.final_adapter('currency AND "north america"',1) + Adapter.final_adapter('equity AND "north america"',1) + Adapter.final_adapter('property AND "north america"',1))
+    return render_template("northamerica.html", entries = Adapter.final_adapter('"north america"',3) )
 
 @app.route("/southamerica")
 def southamerica():
-    return render_template("southamerica.html", entries = Adapter.final_adapter('bonds AND "south america"',1) + Adapter.final_adapter('commodity AND "south america"',1) + Adapter.final_adapter('currency AND "south america"',1) + Adapter.final_adapter('equity AND "south america"',1) + Adapter.final_adapter('property AND "south america"',1))
+    return render_template("southamerica.html", entries = Adapter.final_adapter('"south america"',3))
 
 @app.route("/europe")
 def europe():
-    return render_template("europe.html", entries = Adapter.final_adapter('bonds AND europe',1) + Adapter.final_adapter('commodity AND europe',1) + Adapter.final_adapter('currency AND europe',1) + Adapter.final_adapter('equity AND europe',1) + Adapter.final_adapter('property AND europe',1))
+    return render_template("europe.html", entries = Adapter.final_adapter('"europe"',3))
 
 @app.route("/africa")
 def africa():
-    return render_template("africa.html", entries = Adapter.final_adapter('bonds AND africa',1) + Adapter.final_adapter('commodity AND africa',1) + Adapter.final_adapter('currency AND africa',1) + Adapter.final_adapter('equity AND africa',1) + Adapter.final_adapter('property AND africa',1))
+    return render_template("africa.html", entries = Adapter.final_adapter('"africa"',3))
 
 @app.route("/asia")
 def asia():
-    return render_template("asia.html", entries = Adapter.final_adapter('bonds AND asia',1) + Adapter.final_adapter('commodity AND asia',1) + Adapter.final_adapter('currency AND asia',1) + Adapter.final_adapter('equity AND asia',1) + Adapter.final_adapter('property AND asia',1))
+    return render_template("asia.html", entries = Adapter.final_adapter('"asia"',3))
 
 @app.route("/australia")
 def australia():
-    return render_template("australia.html", entries = Adapter.final_adapter('bonds AND australia',1) + Adapter.final_adapter('commodity AND australia',1) + Adapter.final_adapter('currency AND australia',1) + Adapter.final_adapter('equity AND australia',1) + Adapter.final_adapter('property AND australia',1))
+    return render_template("australia.html", entries = Adapter.final_adapter('"australia"',3))
 
 
 if __name__ == '__main__':

@@ -4,7 +4,8 @@ from os import makedirs
 from datetime import date, timedelta
 import pprint
 
-def get_article(query, number):
+def get_article(region, number):
+    query = region + ' AND ("market" OR "asset") AND ("bonds" OR "commodity" OR "currency" OR "equity" OR "property")'
     MY_API_KEY = "213db595-6e95-4c7a-b51f-98164d13faea"
     API_ENDPOINT_EQ = 'http://content.guardianapis.com/search?section=business&order-by=newest&q='+query
     my_params = {
@@ -49,5 +50,5 @@ def get_article(query, number):
             total_pages = data['response']['pages']
         return adapter
 
-#pprint.pprint(get_article('equities AND "south america"'))
+#pprint.pprint(get_article("south america", 3))
 #pprint.pprint(get_article('equities "south america"'))

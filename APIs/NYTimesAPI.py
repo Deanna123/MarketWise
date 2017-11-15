@@ -2,7 +2,8 @@ from datetime import date, timedelta
 import requests
 import pprint
 
-def get_article(query, number):
+def get_article(region, number):
+    query = region+" AND" + "market OR asset" + "bonds OR commodity OR Currency OR equity OR property"
     API_key = "522e4e6f593d44baaf69a87cdff70548"
     today = date.today()
     prev_date = date(2014, 1, 1)
@@ -11,6 +12,7 @@ def get_article(query, number):
 
     results = requests.get(API_endpoint)
     data = results.json()
+    #print data
     articles = data['response']['docs'][0:number]
 
     adapter = []
@@ -25,4 +27,4 @@ def get_article(query, number):
              adapDict['Published on'] = article['pub_date']
         adapter.append(adapDict)
     return adapter
-#pprint.pprint(get_article("assets AND europe"))
+#pprint.pprint(get_article("north america" ,3))
