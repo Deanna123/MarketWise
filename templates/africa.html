@@ -2,15 +2,47 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="static/css/style.css">
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 <title>Africa</title>
+<style>
+	h1{
+	font-family: "arial";
+	color:#006A7C;
+}
+	ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.fa {
+    color: #006A7C;
+</style>
 </head>
 <body>
 <ul>
-  <li><a style="color:white" href="/">Home</a></li>
-  <li><a class="active"style="color:white" href="about">About</a></li>
-  <li style="float:right" ><a style="color:white"href="newsletter">Newsletter</a></li>
-  <li><a style="color:white" href="contact.html">Contact</a></li>
-   <li><a href="http://twitter.com/winningcfg"><i class="fa fa-twitter fa-1.5x"></i></a>            
+  <li><a href="/">Home</a></li>
+  <li><a href="about">About</a></li>
+  <li tyle="float:right"><a href="newsletter">Newsletter</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="http://twitter.com/winningcfg"><i class="fa fa-twitter fa-1.5x"></i></a>            
   <li class ="search-bar">
    <form class="navbar-form navbar-right" role="search">
     <div class="form-group">
@@ -20,10 +52,8 @@
    </form>
   </li>
   </ul>
-
-
-    <section id="section-demo">
-     <hr />
+  
+</ul>
 <p><h1>Africa news</h1></p>
 {% for entry in entries %}
 
