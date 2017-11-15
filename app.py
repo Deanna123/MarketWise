@@ -27,6 +27,10 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route("/contact") 
+def contact():
+    return render_template("contact.html")
+
 @app.route("/newsletter") #page for making a signup page for relevant newsletters with mailgun?
 def news():
     return render_template("newsletter.html")
