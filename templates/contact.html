@@ -1,16 +1,83 @@
 <!doctype html>
-<html>
+
+<html class="nie">
 <head>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <title>Contact us</title>
+  <link rel="icon" type="image/jpg" href="static/includes/logo.png">
+  <meta charset="utf-8" />
+  <metaname ="viewport"content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="static/css/Map.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="static/includes/style.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="static/cssmap-continents/cssmap-continents.css" media="screen" />
+  <script type="text/javascript" src ="static/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-<title>Contact</title>
-<body>
+<style>
+  h1{
+    font-family: "arial";
+    color: #006A7C}
 
-	<div class="container">
-	<div class="row">
-  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
 
-			<h1>Contact us</h1>
-	</div>
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px 20px;
+      text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+      background-color: #111;
+  }
+
+  .active {
+      background-color: #006A7C;
+      margin-bottom: 67 px
+      margin-left: 100 px
+  }
+  .fa {
+    color: #006A7C;
+  }
+
+  </style>
+</head>
+<body id="demo-page-continents">
+  <div class='row text-center heading'>
+    <h1> Marketwise</h1>
+ <ul>
+  <li><a style="color:white" href="/">Home</a></li>
+  <li><a style="color:white" href="about">About</a></li>
+  <li style="float:right"><a style="color:white" href="newsletter">Newsletter</a></li>
+
+  <li><a  class="active" style="color:white" href="contact">Contact</a></li>
+   <li><a href="http://twitter.com/winningcfg"><i class="fa fa-twitter fa-1.5x"></i></a>
+  <li class ="search-bar">
+   <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+   </form>
+  </li>
+  </ul>
+
+
+    <section id="section-demo">
+     <hr />
 	<div class="row">
 			<h4 style="text-align:center">We'd love to hear from you!</h4>
 	</div>
@@ -18,19 +85,19 @@
 			<div class="col-xs-12">
 				<div class="styled-input wide">
 					<input type="text" required />
-					<label>Name</label> 
+					<label>Name</label>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input">
 					<input type="text" required />
-					<label>Email</label> 
+					<label>Email</label>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input" style="float:right;">
 					<input type="text" required />
-					<label>Phone Number</label> 
+					<label>Phone Number</label>
 				</div>
 			</div>
 			<div class="col-xs-12">
@@ -44,9 +111,7 @@
 			</div>
 	</div>
 </div>
-</body>
-</head>
-</html>
+
 
 <!-- CSS -->
 <style>
@@ -106,7 +171,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     pointer-events: none;
 }
 
-.styled-input.wide { 
+.styled-input.wide {
     width: 650px;
     max-width: 100%;
 }
@@ -175,7 +240,7 @@ textarea {
 input[type=checkbox] + label {
   color: #ccc;
   font-style: italic;
-} 
+}
 
 input[type=checkbox]:checked + label {
   color: #f00;

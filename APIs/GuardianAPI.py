@@ -19,7 +19,7 @@ def get_article(region, number):
 
     # day iteration from here:
     # http://stackoverflow.com/questions/7274267/print-all-day-dates-between-two-dates
-    start_date = date(2014, 1, 1)
+    start_date = date(2016, 1, 1)
     end_date =  date.today()
     my_params['from-date'] = start_date.strftime('%Y-%m-%d')
     my_params['to-date'] = end_date.strftime('%Y-%m-%d')
