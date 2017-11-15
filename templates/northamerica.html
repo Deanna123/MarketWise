@@ -72,20 +72,6 @@
   </li>
   </ul>
 
-
-<p><h1>North America news</h1></p>
-{% for entry in entries %}
-
-  <h4><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h4>
-  <img src={{entry["Thumbnail"]}}></img>
-  <h4>Summary:{{ entry["Summary"] }}</h4>
-  <h4>Published on: {{entry["Published on"]}}</h4>
-  <h3>Source: {{entry["Source"]}}</h3>
-
-{% endfor %}
-</body>
-</html>
-
 <p><h1>North America news</h1></p>
 {% for entry in entries %}
 
