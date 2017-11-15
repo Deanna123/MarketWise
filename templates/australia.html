@@ -76,10 +76,10 @@
 <p><h1>Australia news</h1></p>
 {% for entry in entries %}
 
-  <h2><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h2>
+  <h4><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h4>
   <img src={{entry["Thumbnail"]}}></img>
-  <h2>Summary:{{ entry["Summary"] }}</h2>
-  <h2>Published on: {{entry["Published on"]}}</h2>
+  <h4>Summary:{{ entry["Summary"] }}</h4>
+  <h4>Published on: {{entry["Published on"]}}</h4>
   <h3>Source: {{entry["Source"]}}</h3>
 
 {% endfor %}
@@ -89,10 +89,10 @@
 <p><h1>Australia news</h1></p>
 {% for entry in entries %}
 
-  <h2><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h2>
+  <h4><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h4>
   <img src={{entry["Thumbnail"]}}></img>
-  <h2>Summary:{{ entry["Summary"] }}</h2>
-  <h2>Published on: {{entry["Published on"]}}</h2>
+  <h4>Summary:{{ entry["Summary"] }}</h4>
+  <h4>Published on: {{entry["Published on"]}}</h4>
   <h3>Source: {{entry["Source"]}}</h3>
 
 {% endfor %}
