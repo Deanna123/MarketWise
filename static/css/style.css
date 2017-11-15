@@ -1,12 +1,13 @@
 body {
-  background:#F0F0F0  ;
+  background:#ffffff ;
 }
 
 h1 {
-	font-family: 'Lobster', cursive;
+	font-family: serif;
 	font-size: 2em;
 	text-align: center;
-	border: 7px double white;
+	border: 7px double black;
 	margin-right: 50px;
 	margin-left: 50px;
 }
+
