@@ -1,10 +1,89 @@
 <!doctype html>
-<html>
+<html class="nie">
 <head>
-<link rel="stylesheet" type="text/css" href="static/css/style.css">
-<title>South America</title>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <title>South America</title>
+  <link rel="icon" type="image/jpg" href="static/includes/logo.png">
+  <meta charset="utf-8" />
+  <metaname ="viewport"content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="static/css/Map.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="static/includes/style.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="static/cssmap-continents/cssmap-continents.css" media="screen" />
+  <script type="text/javascript" src ="static/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<style>
+  h1{
+    font-family: "arial";
+    color: #006A7C;}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+      float: left;
+  }
+
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px 20px;
+      text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+      background-color: #111;
+  }
+
+  .active {
+      background-color: #006A7C;
+  }
+  .fa {
+    color: #006A7C;
+  }
+  </style>
 </head>
-<body>
+<body id="demo-page-continents">
+  <div class='row text-center heading'>
+    <h1> Europe </h1>
+  </div>
+
+  <ul>
+  <li><a style="color:white" href="/">South America</a></li>
+  <li><a "style="color:white" href="about">About</a></li>
+  <li style="float:right" ><a style="color:white"href="newsletter">Newsletter</a></li>
+  <li><a style="color:white" href="contact">Contact</a></li>
+   <li><a href="http://twitter.com/winningcfg"><i class="fa fa-twitter fa-1.5x"></i></a>
+  <li class ="search-bar">
+   <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+   </form>
+  </li>
+  </ul>
+
+
+<p><h1>South America news</h1></p>
+{% for entry in entries %}
+
+  <h2><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h2>
+  <img src={{entry["Thumbnail"]}}></img>
+  <h2>Summary:{{ entry["Summary"] }}</h2>
+  <h2>Published on: {{entry["Published on"]}}</h2>
+  <h3>Source: {{entry["Source"]}}</h3>
+
+{% endfor %}
+</body>
+</html>
 
 <p><h1>South America news</h1></p>
 {% for entry in entries %}
