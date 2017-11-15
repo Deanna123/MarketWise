@@ -12,7 +12,7 @@ def get_article(region, number):
         'from-date': "",
         'to-date': "",
         'order-by': "newest",
-        'show-fields': 'trailText', #changed from all to only get the article abstract/summary
+        'show-fields': 'trailText,thumbnail', #changed from all to only get the article abstract/summary
         'page-size': 200,
         'api-key': MY_API_KEY
     }
@@ -33,7 +33,7 @@ def get_article(region, number):
         resp = requests.get(API_ENDPOINT_EQ, my_params)
         data = resp.json()
         articles = data['response']['results'][0:number]
-
+        #print articles
         for article in articles:
             adapDict = {}
             for key, value in article.items():
@@ -42,7 +42,7 @@ def get_article(region, number):
                 adapDict['Title'] = article['webTitle']
                 adapDict['Summary'] = article['fields']['trailText']
                 adapDict['Published on'] = article['webPublicationDate']
-                adapDict['Topic'] = query
+                adapDict['Thumbnail'] = article['fields']['thumbnail']
 
             adapter.append(adapDict)
 

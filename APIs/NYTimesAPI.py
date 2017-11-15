@@ -12,9 +12,7 @@ def get_article(region, number):
 
     results = requests.get(API_endpoint)
     data = results.json()
-    #print data
     articles = data['response']['docs'][0:number]
-
     adapter = []
 
     for article in articles:
@@ -25,7 +23,8 @@ def get_article(region, number):
              adapDict['Title'] = article['headline']['main']
              adapDict['Summary'] = article['snippet']
              adapDict['Published on'] = article['pub_date']
-             #adapDict['Thumbnail'] = article['multimedia'][1]
+             adapDict['Thumbnail'] = 'http://www.nytimes.com/'+article['multimedia'][0]['url']
         adapter.append(adapDict)
+        print adapDict['Thumbnail']
     return adapter
 #pprint.pprint(get_article("north america" ,1))
