@@ -42,7 +42,7 @@ def get_article(region, number):
                 adapDict['Title'] = article['webTitle']
                 adapDict['Summary'] = article['fields']['trailText']
                 adapDict['Published on'] = article['webPublicationDate']
-                if len(article['multimedia'])>0:
+                if len(article['fields']['thumbnail'])>0:
                     adapDict['Thumbnail'] = article['fields']['thumbnail']
                 else:
                     adapDict['Thumbnail'] = 'http://fontslogo.com/wp-content/uploads/2013/03/The-Guardian-Logo-Font.jpg'
