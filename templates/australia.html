@@ -13,6 +13,7 @@
 {% for entry in entries %}
 
   <h2><a href="#" onclick='window.open("{{ entry["URL"] }}");return false;'>{{ entry["Title"] }}</a></h2>
+  <img src={{entry["Thumbnail"]}}></img>
   <h2>Summary:{{ entry["Summary"] }}</h2>
   <h2>Published on: {{entry["Published on"]}}</h2>
   <h3>Source: {{entry["Source"]}}</h3>

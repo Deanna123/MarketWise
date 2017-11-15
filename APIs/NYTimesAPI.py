@@ -17,14 +17,17 @@ def get_article(region, number):
 
     for article in articles:
         adapDict = {}
+        #print article['multimedia'][0]
         for key, value in article.items():
              adapDict['Source'] = 'Times'
              adapDict['URL'] = article['web_url']
              adapDict['Title'] = article['headline']['main']
              adapDict['Summary'] = article['snippet']
              adapDict['Published on'] = article['pub_date']
-             adapDict['Thumbnail'] = 'http://www.nytimes.com/'+article['multimedia'][0]['url']
+             if len(article['multimedia'])>0:
+                 adapDict['Thumbnail'] = 'http://www.nytimes.com/'+article['multimedia'][0]['url']
+             else:
+                 adapDict['Thumbnail'] = 'https://www.famouslogos.net/images/new-york-times-logo.jpg'
         adapter.append(adapDict)
-        print adapDict['Thumbnail']
     return adapter
 #pprint.pprint(get_article("north america" ,1))
