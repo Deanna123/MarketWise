@@ -6,7 +6,7 @@ import pprint
 
 def get_article(region, number):
     query = region + ' AND ("market" OR "asset") AND ("bonds" OR "commodity" OR "currency" OR "equity" OR "property")'
-    MY_API_KEY = "213db595-6e95-4c7a-b51f-98164d13faea"
+    MY_API_KEY = <ENTER API KEY HERE>
     API_ENDPOINT_EQ = 'http://content.guardianapis.com/search?section=business&order-by=newest&q='+query
     my_params = {
         'from-date': "",
